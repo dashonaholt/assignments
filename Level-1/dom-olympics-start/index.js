@@ -41,7 +41,7 @@ buttonclear.addEventListener('click', () => {
     }
     });
     let dropDown = document.getElementById("theme-drop-down")
-    dropDown.addEventListener("click", colorChange)
+    dropDown.addEventListener("change", colorChange)
 
     let messageLeft = document.getElementsByClassName("message left")
     let messageRight = document.getElementsByClassName("message right")

@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    /* display:grid; */
+    /* repeat, what would you like to repeat */
+    grid-template-columns:  repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: repeat(4, 100px)
+}
+
+.title {
+    color: teal;
+    font-size: 50px;
+    font-family: cursive;
+    text-align: center;
+
+    
+}
+.nav {
+    background-color: indianred;
+    padding: 5px;
+    text-align: center;
+}
+.nav div {
+    display:inline-block;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.header1 > h1 {
+    background-color: indianred;
+    text-align: center;
+    font-family: cursive;
+}
+.header1 > p {
+    text-align: center;
+    border: 2px solid black;
+}
+.FirstImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px dotted teal;
+    width: 500px;
+    height: 250px;
+}
+.header2 >h1 {
+    background-color: indianred;
+    text-align: center;
+    font-family: cursive;
+}
+.header2 > p {
+    text-align: center;
+    border: 2px solid black;
+}
+.SecondImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px dotted teal;
+    width: 500px;
+    height: 250px;
+}
+.footer {
+    background-color: teal;
+    text-align: center;
+    padding: 5px;
+}
+
+
+
+
+ @media (max-width: 600px) {
+    .title {
+        color: teal;
+        font-size: 30px;
+        font-family: cursive;
+        text-align: center;
+    }
+    .nav {
+        background-color: indianred;
+        padding: 3px;
+        text-align: center;
+    }
+    .nav div {
+        display:inline-block;
+        font-size: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+    
+    }
+    .header1 > h1 {
+        background-color: indianred;
+        text-align: center;
+        font-size: 15px;
+        font-family: cursive
+        
+    }
+    .header1 > p {
+        text-align: center;
+        border: 2px solid black;
+    }
+    .FirstImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: 10px dotted teal;
+        width: 300px;
+        height: 300px;
+    }
+    .header2 >h1 {
+        background-color: indianred;
+        text-align: center;
+        font-size: 15px;
+        font-family: cursive
+    }
+    .header2 > p {
+        text-align: center;
+        border: 2px solid black;
+    }
+    .SecondImage {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border: 10px dotted teal;
+        width: 300px;
+        height: 300px;
+    }
+    .footer {
+      background-color: teal;
+      text-align: center;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      padding: 10px;
+    }
+}
