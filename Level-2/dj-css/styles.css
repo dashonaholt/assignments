@@ -1,0 +1,110 @@
+.box1 {
+    background-color: aqua;
+    border: 3px black solid;
+    border-radius: 50% 20% / 10% 40%;
+    box-shadow: 12px 12px 2px 1px blue;
+    height: 200px;
+    width:200px;
+    margin: 40px; 
+    padding: 20px;
+    position: static;
+    opacity: 0.7;
+    transition: background-color 1s linear 1s, width 1s linear;
+}
+.box1:hover {
+    background-color: black; 
+    width: 300px; 
+}
+
+
+
+
+.box2 {
+    background-color: blue;
+    border: 3px black solid;
+    border-radius: 50% 20% / 10% 40%;
+    box-shadow: 12px 12px 2px 1px aqua;
+    height: 200px;
+    width:200px;
+    margin: 40px; 
+    padding: 20px;
+    position: static;
+    opacity: 0.7;
+    transition: background-color 1s linear 1s, width 1s linear;
+}
+
+.box2:hover {
+    background-color: black; 
+    width: 300px; 
+}
+
+.box3
+{
+    background-color: darkmagenta;
+    border: 3px black solid;
+    border-radius: 50% 20% / 10% 40%;
+    box-shadow: 12px 12px 2px 1px darkorchid;
+    height: 200px;
+    width:200px;
+    margin: 40px; 
+    padding: 20px;
+    position: static;
+    opacity: 0.7;
+    transition: background-color 1s linear 1s, width 1s linear;
+}
+.box3:hover {
+    background-color: black; 
+    width: 300px; 
+}
+.box4
+{
+    background-color: darkorchid;
+    border: 3px black solid;
+    border-radius: 50% 20% / 10% 40%;
+    box-shadow: 12px 12px 2px 1px darkmagenta;
+    height: 200px;
+    width:200px;
+    margin: 40px; 
+    padding: 20px;
+    position: static;
+    opacity: 0.7;
+    transition: background-color 1s linear 1s, width 1s linear;
+}
+.box4:hover {
+    background-color: black; 
+    width: 300px; 
+}
+.box5{
+    background-color: darkorange;
+    border: 3px black solid;
+    border-radius: 50% 20% / 10% 40%;
+    box-shadow: 12px 12px 2px 1px peru;
+    height: 200px;
+    width:200px;
+    margin: 40px; 
+    padding: 20px;
+    position: static;
+    opacity: 0.7;
+    transition: background-color 1s linear 1s, width 1s linear;
+}
+.box5:hover {
+    background-color: black; 
+    width: 300px; 
+}
+.box6{
+    background-color:peru;
+    border: 3px black solid;
+    border-radius: 50% 20% / 10% 40%;
+    box-shadow: 12px 12px 2px 1px darkorange;
+    height: 200px;
+    width:200px;
+    margin: 40px; 
+    padding: 20px;
+    position: static;
+    opacity: 0.7;
+    transition: background-color 1s linear 1s, width 1s linear;
+}
+.box6:hover {
+    background-color: black; 
+    width: 300px; 
+}

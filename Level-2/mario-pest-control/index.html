@@ -1,0 +1,54 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Pest Control</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+ <body>
+    <header>
+        <h1 id="title">Mario Pest Control</h1>
+        <img id ="mario" src="https://mario.wiki.gallery/images/thumb/3/3e/MPSS_Mario.png/250px-MPSS_Mario.png"/>
+        </header>
+        <div id="text">
+        <p>Princess Peach has a huge infestation of Goombas, Bob-ombs, and Cheep-cheeps, and has commissioned Mario to take care of her pest problem. 
+            Mario did the job, but he is having trouble keep track of how many he has caught and has asked you to build him a website that keeps track 
+            of how many baddies he caught for Princess Peach so he can send her a bill.</p>
+        </div>
+
+        
+        <div id="price">Each Baddie Price:</div>
+        <div id="baddies">
+                <ul>
+    <li>Goombas: 5 coins <img id ="goombas" src="https://www.pngkit.com/png/full/187-1876050_goomba-mario-bros-png.png" />
+    <li> Bob-ombs: 7 Coins <img id="bobombs" src="https://cdn.custom-cursor.com/cursors/super_mario_bob-omb_1076.png" />
+    <li>Cheep-cheeps: 11 Coins<img id="cheep" src="https://mario.wiki.gallery/images/thumb/a/ae/NSMBU_Spiny_Cheep_Artwork.png/200px-NSMBU_Spiny_Cheep_Artwork.png" />
+    </ul>   
+    </div>
+
+    <form name="pest"> 
+        <h3>Baddies Caught</h3>
+    <label for="name">Goobmas Caught:</label>
+    <input type="number" name="goombas" required>
+    
+    <label for="name">Bob-ombs Caught:</label>
+    <input type="number" name="bobombs" required>
+    
+    <label for="name">Cheep-cheeps Caught:</label>
+    <input type="number" name="cheep" required>
+    <h4 id="total">total:</h4>
+    <button>Submit</button>
+    </form>
+
+
+<footer>
+    <div id="email">mariosemail@mariosemail.email</div> 
+    <div id="companywebsite">Mariospest.com</div>
+    <div id="address">123 Mario Dr, Austin, TX 878889</div>
+</footer>
+
+    <script src="app.js"></script>
+ </body>
+ </html>

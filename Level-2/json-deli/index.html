@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <titl>JSON's Deli</title>
+ </head>
+ <body>
+    <script type="text/javascript">
+        let jsonMenu = 
+        `{
+	"menu": {
+		"Appetizers": [{
+            "name": "calamari", 
+            "ingredients": ["lightly breaded calamari", "lemon", "marinara", "garlic aioli"],
+            "description": ["Deli's smokers seasoned calamari with roasted garlic aioli or marinara sauce"]
+        },
+        {
+            "name": "sliders", 
+            "ingredients":[ "beef", "buns", "onions"],
+            "description": ["Four sliders with fluffy buns topped with onion, pickles, ketchup and lettuce"]
+        },
+        {
+            "name": "mozzarella sticks",
+            "ingredients": ["bredding", "mozzarella", "parmesean cheese"],
+            "description": ["6 garlic butter mozzarella sticks topped with parmesean cheese and marinara dipping sauce"]
+        }
+            
+    ]},
+        "Cold Drinks": [{
+            "name": "lemonade",
+            "ingredients": ["lemons, cane sugar"],
+            "description": ["freshly squeezed lemonade with made with cane sugar"]
+        },
+        {
+            "name": "strawberry lemonade",
+            "ingredients": ["lemons", "strawberry syrup", "strawberries"],
+            "description": ["freshly squeezed lemonade with made with strawberry syrup, cane sugar, topped with fresh strawberries"]
+        },
+        { 
+            "name": "mango lemonade",
+            "ingredients": ["lemons", "mango syrup", "mangoes"],
+            "description": ["freshly squeezed lemonade with made with mango syrup, cane sugar, topped with fresh mangoes"]
+    }],
+        " Hot Sandwhiches": [{
+            "name": "grilled cheese",
+            "ingredients": ["blend of cheese", "bread", "tomato soup"],
+            "description": ["brioche bread with cheese and a side of fresh tomato basil soup"]
+        },
+        {
+            "name": "lobster grilled cheese",
+            "ingredients": ["lobster", "lemon", "bread"],
+            "description": ["fresh lobster on brioche roll topped with chives and creamy lobster sauce" ]
+        },
+        {
+            "name": "crabcake sandwhich",
+            "ingredients": [" jumbo crab meat", "breadcrumbs", "brioche bun"],
+            "description": ["fresh crabmeat on brioche bun topped with creamy crabcake sauce" ]
+    }],
+        "Desserts": [{
+            "name": "key lime pie",
+            "ingredients": ["lime", "graham crackers", "whipped cream"],
+            "description": [" Lime flavored graham cracker cruster pie topped with whipped cream"]
+        },
+        {
+            "name":"Vanilla bean cheesecake",
+            "ingredients": ["vanilla beans", "cream cheese", "shortbread cookies"],
+            "description": ["shortbread crusted vanilla bean cheesecake topped with whipped cream"]
+        },
+        {
+            "name": "Sorbet icecream",
+            "ingredients": ["mango", "rasberry", "lemon"],
+            "description": ["three delicious flavors mango, rasberr or lemon" ]
+    }],
+    "Drinks": [{
+        "name": "Cola in can",
+        "ingredients":["cola"],
+        "description":["canned soda"]
+    },
+    {
+        "name": "Sprite",
+        "ingredients":["sprite"],
+        "description":["canned soda"]
+    },
+    {
+        "name": "Gatorade",
+        "ingredients":["gatorade"],
+        "description":["bottled gatorade"]
+    }]
+}`
+console.log(JSON.parse(jsonMenu))
+    </script>
+ </body>
+ </html>

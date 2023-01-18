@@ -1,0 +1,80 @@
+* {
+    box-sizing: borderbox;
+}
+
+
+body { 
+    width: 100%;
+} 
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#price {
+    display:flex;
+    justify-content: center;
+    font-size: larger;
+}
+
+#baddies {
+    display:flex;
+    justify-content: center;
+    height: 500px;
+    align-items: center;
+}
+
+ul li{
+    display:inline-block;
+}
+#title {
+    font-size: 25px;
+    /* text-align: center; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: blue;
+    text-shadow: 3px 2px 5px red;
+}
+
+
+#mario{
+    width: 200px;
+    height:200px;
+}
+
+#goombas {
+    width:200px;
+    height:200px;
+    display:flex;
+    justify-content: center;
+}
+#bobombs {
+    width:200px;
+    height:200px;
+    display:flex;
+    justify-content: center;
+}
+#cheep {
+    width:200px;
+    height:200px;
+    display:flex;
+    justify-content: center;
+}
+#text {
+    text-align: center;
+    display:flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+footer > div {
+    text-align: center;
+}

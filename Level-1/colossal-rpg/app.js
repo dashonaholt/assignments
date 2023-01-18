@@ -10,11 +10,11 @@ console.log(greeting)
 const player = new Character(`${name}`, 100, 20, "blade")
 console.log(player)
 // constructor function
-function Character (name, healthpoints, attackpoints, inventoryitem) {
+function Character (name, healthpoints, attackpoints, inventory) {
     this.name = name;
     this.healthpoints = healthpoints;
     this.attackpoints = attackpoints;
-    this.inventoryitem = inventoryitem;
+    this.inventory = [inventory]
 }
 var witch = new Character("witch",50,5, "gun") // change healthpoint number to Number, not string
 var wizzard = new Character("wizzard",50,5, "sword")
@@ -128,6 +128,8 @@ function fight(indexEnemy) {
         } else if ( indexEnemy.healthpoints <= 0 ) {
     console.log(" enemey healthpoints: " , indexEnemy.healthpoints)
     console.log("you have killed" + indexEnemy.name)
+    player.inventory.push(indexEnemy.inventory[0])
+    console.log('you have taken the enemies ' + indexEnemy.inventory[0])
     const option = readline.keyIn("Would you like to see the players information? if yes, press 'p' if not press 'n'" , {limit: "pn"}); {
         if( option === 'p' ) {
             console.log(player)

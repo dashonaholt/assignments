@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Form</title>
+</head>
+<body>
+<form id="myForm">
+    First Name: <input type="text" name="firstName" required/>
+    Last Name: <input type="text" name="lastName" required/> 
+    <br>
+    Age: <input type="number" name="age" required/>
+    <br>
+    Male: <input type="radio" name="gender" value="Male"/>
+    Female: <input type="radio" name="gender" value="Female"/>
+    <br>
+    Location: <select name="city">
+        <option value="Dallas">Dallas</option>
+        <option value=" Houston"> Houston</option>
+        <option value="Austin"> Austin</option>
+    </select>
+    <br>
+    
+    Dietary restrictions: 
+    Vegan<input type="checkbox" value="Vegan" name="diet" />
+    Vegitarian<input type="checkbox" value="Vegitarian" name="diet" />
+    Lactose<input type="checkbox" value="Lactose" name="diet" />
+    <br>
+    <button>Submit</button>
+</form>
+
+
+
+
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+</html>
