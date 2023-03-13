@@ -63,6 +63,12 @@ function listData(data) {
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
 }
+// adding event listener to delete button for it to actually delete things
+deleteBtn.addEventListener('click', () => {
+    axios.delete(`https://api.vschool.io/dashonaholt/todo/${data[i]._id}`)
+    .then((res) => location.reload())
+    .catch((err) => console.log(err));
+});
 function notComplete() {
     const completed = {
         completed: false,
@@ -71,13 +77,7 @@ function notComplete() {
     axios.put(`https://api.vschool.io/dashonaholt/todo/${data[i]._id}`, completed)
     .then((res) => console.log(res))
     .catch((err) => console.log(err));
-
-    // adding event listener to delete button for it to actually delete things
-    deleteBtn.addEventListener('click', () => {
-        axios.delete(`https://api.vschool.io/dashonaholt/todo/${data[i]._id}`)
-        .then((res) => location.reload())
-        .catch((err) => console.log(err));
-    });
+    
     }
 }
 // creating clear list function to prevent duplicates
@@ -101,6 +101,7 @@ todoForm.addEventListener('submit', function (e) {
     imgUrl: todoForm.imgUrl.value,
     price: todoForm.price.value,
 };
+console.log("newTodo", newTodo)
   // clearing the form
     todoForm.title.value = '';
     todoForm.description.value = '';
@@ -113,7 +114,9 @@ todoForm.addEventListener('submit', function (e) {
     console.log(newTodo, 'newTodo');
     axios.post('https://api.vschool.io/dashonaholt/todo/', newTodo)
     //this is saying dont worry about the response just go get the data
-    .then((res) => getData())
+    .then((res) => {
+        console.log("post res:", res)
+        getData()})
     .catch((err) => console.log(err)); 
 });
 getData();

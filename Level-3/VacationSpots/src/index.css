@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color:white;
+    margin:0px;
+}
+.vacation{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 0px;
+    box-shadow: -1px 0 10px #000;
+    margin: 20px;
+}
+.place{
+font-family: "Sofia", sans-serif;
+font-size: 50px;
+text-shadow: 3px 3px 3px #ababab;
+padding-top: 30px;
+}
+.price{
+    font-family: "Sofia", sans-serif;
+}
+.season{
+    font-family: "Sofia", sans-serif;
+}
