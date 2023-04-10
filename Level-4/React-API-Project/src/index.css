@@ -1,0 +1,112 @@
+.App {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.headerContainer h1 {
+  justify-content: center;
+  align-items: center;
+  font-size: 90px;
+  height: 60px;
+  font-weight: 50;
+  color: black;
+}
+
+.headerContainer p {
+  padding: 0;
+  font-size: 40px;
+  font-weight: lighter;
+  color: black;
+}
+
+.headerContainer button {
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  background-color: #121619;
+  height: 50px;
+  width: 180px;
+  color: rgb(200, 167, 23);
+  text-decoration: none;
+  font-size: 20px;
+}
+.footer {
+  width:100%;
+  height: 80px;
+  background-color: black;
+display: flex;
+justify-content: center;
+
+}
+.footer p {
+  color: rgb(200, 167, 23);
+}
+
+@media only screen and (max-width: 374px) {
+  .home {
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar {
+    width:390px;
+    height: 150px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .headerContainer {
+    margin-left: 0px;
+    border-radius: 0px;
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #121619;
+    color: white;
+  }
+  .headerContainer h1 {
+    font-size: 40px;
+    height: 30px;
+    color: white;
+  }
+
+  .headerContainer p {
+    font-size: 30px;
+    color: white;
+  }
+  .headerContainer button:hover {
+    background-color: rgb(225, 225, 225);
+    color: #121619;
+  }
+}

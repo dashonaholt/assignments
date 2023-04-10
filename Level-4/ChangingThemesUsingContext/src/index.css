@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+div, button { 
+  padding: 5px 10px; 
+  margin: 5px 0px; 
+}
+button { 
+  display: flex;
+  border: none; 
+}
+.body{
+  height: 500px;
+  
+}
+.body-text{
+  text-align: center;
+}
+.light-theme {
+  background-color: plum;
+  color: white;
+}
+
+.dark-theme {
+  background-color: purple;
+  color: white; 
+}
+.nav{
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+display: flex;
+  justify-content: space-evenly;
+}
+.nav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.nav a:hover {
+  background-color: #ddd;
+  color: black;
+  cursor: pointer;
+}

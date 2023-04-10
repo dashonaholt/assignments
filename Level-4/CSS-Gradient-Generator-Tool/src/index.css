@@ -1,0 +1,35 @@
+.squares {
+  display: flex;
+  gap: 10px;
+  margin-top: 100px;
+  justify-content: center;
+}
+main > h1 {
+  text-align: center;
+}
+.callout {
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 20px;
+  background-color: palevioletred;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+ height: 400px;
+ width: 400px;
+}
+textarea {
+min-width: 400px;
+  min-height: 150px;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.colorbox {
+  min-height: 150px;
+  min-width:400px;
+  border: 1px solid black;
+}

@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    background-color: white;
+    overflow: hidden;
+  display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+  }
+  .nav a {
+    float: left;
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .nav a:hover {
+    background-color:gray;
+    color: black;
+    cursor: pointer;
+  }
+
+  .form {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: transparent;
+    height: 30px;
+    color: black;
+
+  }
+  body {
+    height: 300px;
+    background-color: gray
+  }
