@@ -3,11 +3,11 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import Home from "./components/Home.jsx"
 import HouseList from "./components/HouseList.jsx"
 import Staff from "./components/Staff.jsx"
-import Students from "./components/Students.jsx"
+import TopStudents from "./components/TopStudents.jsx"
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx"
-import Test from "./components/test.jsx";
 import axios from "axios";
+// import Card from "./Card.jsx";
 
 export default function App() {
   useEffect(()  => {
@@ -25,7 +25,7 @@ console.log(names, "test names")
         <Routes>
         <Route path="/" element={<Home />} /> 
         <Route path="/houselist" element={<HouseList />} /> 
-        <Route path="/students" element={<Students />} /> 
+        <Route path="/TopStudents" element={<TopStudents />} /> 
         <Route path="/staff" element={<Staff />} /> 
       {/* {names.map(item => 
         
@@ -33,6 +33,7 @@ console.log(names, "test names")
         )} */}
         </Routes>
     </Router>
+    {/* <Card /> */}
     <Footer />
       </div>
   )

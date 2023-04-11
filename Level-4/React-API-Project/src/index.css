@@ -9,13 +9,41 @@ body {
   padding: 0;
   margin: 0;
 }
-
+.ThirdLink{
+  background-image: url('https://images3.alphacoders.com/178/178309.jpg');
+  display: flex;
+  height: 85vh;
+}
+.SecondLink {
+  background-image: url('https://images3.alphacoders.com/178/178309.jpg');
+  display: flex;
+  margin-top: 0px;
+  height: 85vh;
+  margin-bottom: 0px;
+  color: aliceblue;
+}
+.FourthLink {
+  background-image: url('https://images3.alphacoders.com/178/178309.jpg');
+  height: 85vh;
+  display: flex;
+}
 .navbar {
-  width: 100%;
-  height: 80px;
+  width:100%;
   background-color: black;
   display: flex;
-  flex-direction: row;
+}
+.navbar .leftSide {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+.navbar .rightSide {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .home {
@@ -56,9 +84,25 @@ body {
   text-decoration: none;
   font-size: 20px;
 }
+.card {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  height: 300px;
+  border-radius: 5px;
+  width: 300px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px #ccc;
+}
 .footer {
   width:100%;
-  height: 80px;
+  /* height: 80px; */
+  /* height: 100%; */
   background-color: black;
 display: flex;
 justify-content: center;
@@ -68,45 +112,307 @@ justify-content: center;
   color: rgb(200, 167, 23);
 }
 
-@media only screen and (max-width: 374px) {
-  .home {
-    justify-content: center;
-    align-items: center;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ @media only screen and (max-width: 375px) {
+  .App {
+    width: 100vw;
+    height: 300vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  .ThirdLink{
+    background-image: url('https://images3.alphacoders.com/178/178309.jpg');
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 310vw;
+    background-repeat: no-repeat;
+  }
+  .SecondLink {
+    background-image: url('https://images3.alphacoders.com/178/178309.jpg');
+    display: flex;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: aliceblue;
+  }
+  .FourthLink {
+    background-image: url('https://images3.alphacoders.com/178/178309.jpg');
+    height: auto;
+    display: flex;
   }
   .navbar {
-    width:390px;
-    height: 150px;
     background-color: black;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
   }
-  .headerContainer {
-    margin-left: 0px;
-    border-radius: 0px;
-    padding: 50px;
-    width: 100%;
+  .navbar .leftSide {
+    display: none;
+  }
+  .navbar .rightSide {
+    flex: 50%;
+    height: 100%;
+    display: flex;
+    margin-left: 250px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .home {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    background-color: #121619;
-    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .headerContainer h1 {
-    font-size: 40px;
-    height: 30px;
-    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    height: 60px;
+    font-weight: 50;
+    color: black;
   }
-
+  
   .headerContainer p {
-    font-size: 30px;
-    color: white;
+    padding: 0;
+    font-size: 40px;
+    font-weight: lighter;
+    color: black;
   }
-  .headerContainer button:hover {
-    background-color: rgb(225, 225, 225);
-    color: #121619;
+  
+  .headerContainer button {
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    justify-content: center;
+    background-color: #121619;
+    height: 50px;
+    width: 180px;
+    color: rgb(200, 167, 23);
+    text-decoration: none;
+    font-size: 20px;
   }
+  .card {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 30px;
+    max-width: 100%;
+    border: 1px solid #ccc;
+    height: auto;
+    border-radius: 5px;
+    width: 300px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #ccc;
+  }
+  .footer {
+    width:100%;
+    background-color: black;
+  display: flex;
+  justify-content: center;
+  
+  }
+  .footer p {
+    color: rgb(200, 167, 23);
+  }
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+.App {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
+
+body {
+  padding: 0;
+  margin: 0;
+}
+.ThirdLink{
+  background-image: url('https://images3.alphacoders.com/178/178309.jpg');
+  display: flex;
+  height: 85vh;
+}
+.SecondLink {
+  background-image: url('https://images3.alphacoders.com/178/178309.jpg');
+  display: flex;
+  margin-top: 0px;
+  height: 85vh;
+  margin-bottom: 0px;
+  color: aliceblue;
+}
+.FourthLink {
+  background-image: url('https://images3.alphacoders.com/178/178309.jpg');
+  height: 85vh;
+  display: flex;
+}
+.navbar {
+  width:100%;
+  background-color: black;
+  display: flex;
+}
+.navbar .leftSide {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+.navbar .rightSide {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+.headerContainer h1 {
+  justify-content: center;
+  align-items: center;
+  font-size: 90px;
+  height: 60px;
+  font-weight: 50;
+  color: black;
+}
+
+.headerContainer p {
+  padding: 0;
+  font-size: 40px;
+  font-weight: lighter;
+  color: black;
+}
+
+.headerContainer button {
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  background-color: #121619;
+  height: 50px;
+  width: 180px;
+  color: rgb(200, 167, 23);
+  text-decoration: none;
+  font-size: 20px;
+}
+.card {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 30px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  height: 300px;
+  border-radius: 5px;
+  width: 300px;
+  padding: 10px;
+  box-shadow: 2px 2px 5px #ccc;
+}
+.footer {
+  width:100%;
+  /* height: 80px; */
+  /* height: 100%; */
+  background-color: black;
+display: flex;
+justify-content: center;
+
+}
+.footer p {
+  color: rgb(200, 167, 23);
+}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
