@@ -4,9 +4,13 @@ import BannerImage from "../assets/HarryPotterImage.jpg"
 export default function Home() {
     return (
         <div className="home">
-            <div className="headerContainer" style={{height: 800, backgroundImage: `url(${BannerImage})` }}>
+            <div className="headerContainer">
                 <h1>Hogwarts</h1>
                 <p>Battle of The Houses</p>
+                <h4> Gryffindor 	~ Bravery, helping others, and chivalry.</h4> 
+                <h4>Hufflepuff ~	Hard work, patience, loyalty, and fair play.</h4> 
+                <h4>Ravenclaw  ~	Intelligence, knowledge, planning ahead, and wit. </h4>
+                <h4>Slytherin ~	Ambition, cunningness, heritage, and resourcefulness. </h4>
                 <Link to="/houselist"><button>More Info</button>
                 </Link>
                 </div> 
