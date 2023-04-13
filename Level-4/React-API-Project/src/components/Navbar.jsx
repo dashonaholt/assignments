@@ -7,11 +7,12 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 export default function Navbar(){
     return(
         <div className="navbar">
-            <div className="leftSide"></div>
+            {/* <div className="leftSide"></div> */}
             <img src={Logo} style={{height:100 , width:400}} />
-            <div className="rightSide">
-            <nav style={{margin:10, fontSize: '36px'}}>
+            {/* <div className="rightSide"> */}
+            {/* <nav style={{margin:10, fontSize: '36px', alignSelf: "flex-end"}}> */}
         {/* <i class="fa-solid fa-bolt" /> */}
+        <nav className="nav-links">
           <Link to="/" style={{padding: 15}}>
           Home
           </Link>
@@ -25,7 +26,7 @@ export default function Navbar(){
           Staff
           </Link>
         </nav>
-        </div>
+        {/* </div> */}
         </div>
     )
 }

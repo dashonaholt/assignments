@@ -32,7 +32,7 @@ export default function HouseList() {
                     <img src='https://logos-world.net/wp-content/uploads/2021/08/Gryffindor-Logo-700x394.png' style={{ marginLeft: '-90px' , width: '400px', height: '200px' }}/>
                 </div>
                 <div className='hufflepuff' onClick={() => setSelectedHouse("Hufflepuff")}>
-                    <img src='https://i.pinimg.com/originals/93/d8/42/93d8425dbc28c88332d929dc25493138.png' style={{ marginLeft: '-90px', width: '200px', height: '200px' }}/>
+                    <img src='https://i.pinimg.com/originals/93/d8/42/93d8425dbc28c88332d929dc25493138.png' style={{ marginLeft: '-90px', marginRight: '60px' ,width: '200px', height: '200px' }}/>
                 </div>
             </div>
 
