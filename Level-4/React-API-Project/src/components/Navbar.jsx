@@ -1,6 +1,6 @@
 import React from "react"
 import Logo from "../assets/HarryPotterLogo.png"
-import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 

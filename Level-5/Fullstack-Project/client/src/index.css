@@ -1,0 +1,167 @@
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1,
+h2,
+h3 {
+  margin-bottom: 1rem;
+}
+h2 {
+  color: #ff55bb;
+}
+h3 {
+  color: #ff55bb;
+}
+
+.home-route img {
+  height: 300px;
+  width: 400px;
+  margin: 0;
+  background-color: #b6eafa;
+  display: block;
+}
+a {
+  text-decoration: none;
+  color: black;
+  padding: 0.5rem;
+}
+
+a:hover {
+  text-decoration: underline;
+  background-color: #fcffb28c;
+  border-radius: 10px;
+}
+/* navbar */
+header {
+  width: 100%;
+  height: 50px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #b6eafa;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+footer {
+  background-color: #b6eafa;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .credits {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+footer .credits img {
+  margin-right: 8px;
+}
+
+footer img {
+  height: 30px;
+  width: 50px;
+}
+
+.hips-route {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+}
+.back-route {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+}
+
+.both-route {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+}
+.home-route {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+}
+
+.exercise-card {
+  background-color: #fcffb2;
+  margin: 1rem 0;
+  padding: 1rem;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.exercise-card h3 {
+  text-align: center;
+}
+.exercise-card img {
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+@media only screen and (max-width: 466px) {
+  .exercise-card {
+    max-width: 330px;
+  }
+  .exercise-card img {
+    max-width: 300px;
+  }
+}
+@media only screen and (max-width: 438px) {
+  header {
+    width: 100%;
+  }
+  .nav-links {
+    gap: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    padding: 0;
+  }
+
+  footer {
+    width: 100%;
+  }
+}

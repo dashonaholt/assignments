@@ -118,19 +118,7 @@ button {
   flex-wrap: wrap; 
 }
 
-.footer > p{
-   /* display: flex; 
-  flex-direction: column;
-  justify-content: end;
-  align-items: center;  */
-  /* padding: 10px 0px; */
-  /*width: 100%;*/
-  /* padding-top: 25px; */
-  /* padding-top: 50vh; */
-  /* height: 120vh; */
-  /* background-color: blueviolet; */
 
-}
 
 .footer {
   display: flex;
@@ -156,14 +144,10 @@ button {
   margin-bottom: 0px; 
    color: aliceblue;
  }
- .ThirdLink {
-
- }
+ 
 
 @media screen and (max-width: 2400px) {
-  .home {
-    /* height: 200vh; */
-  }
+  
   .SecondLink {
     display: flex;
     flex-direction: column;
@@ -219,9 +203,6 @@ button {
 }
 @media screen and (max-width: 330px) {
 
-   .App {
-    /* width: 200vw; */
-   }
    .SecondLink {
      background-size: 100px;
     height: 240vh;
@@ -231,9 +212,7 @@ button {
     height: 240vh;
    }
 
-  .footer > p{
-    /* padding-top: 130vh; */
-  }
+
   .navbar {
     width: 300vw;
   }

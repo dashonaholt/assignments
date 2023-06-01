@@ -7,7 +7,7 @@ import TopStudents from "./components/TopStudents.jsx"
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx"
 import axios from "axios";
-// import Card from "./Card.jsx";
+
 
 export default function App() {
   useEffect(()  => {

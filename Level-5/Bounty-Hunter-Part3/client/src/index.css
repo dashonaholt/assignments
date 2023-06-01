@@ -1,0 +1,44 @@
+* {
+  box-sizing:border-box;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1 {
+  margin: 5px;
+}
+p {
+  margin: 5px;
+}
+.bounty {
+  border: 1px solid #333;
+  padding: 10px;
+  margin: 5px;
+}
+.bounty-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 32px;
+}
+.delete-btn {
+  background-color:rgb(240, 85, 85);
+  color: white;
+}
+.edit-btn {
+  background-color: rgb(65, 163, 233);
+  color: white;
+}
+form {
+  border: 1px solid #333;
+  padding: 10px;
+  font-size: 16px;
+}
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin: 5px;
+}
