@@ -28,17 +28,22 @@ const votesSchema = new Schema({
     type: Number,
     default: 0,
   },
-  comment: {
-    type: Array,
-  },
+  comment: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+      },
+      content: {
+        type: String,
+        required: true,
+      },
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      },
+    },
+  ],
 });
-// comment: {
-//     type: Array,
-//   },
-//   upvote: {
-//     type: Number,
-//   },
-//   downvote: {
-//     type: Number,
-//   },
 module.exports = mongoose.model("Votes", votesSchema);

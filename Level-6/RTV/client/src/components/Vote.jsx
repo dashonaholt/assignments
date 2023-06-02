@@ -60,6 +60,37 @@ const [isEditing, setIsEditing] = useState(false); // Track editing state
   setIsEditing(false);
 };
 
+function handleChangeComment(e, index) {
+    const { name, value } = e.target;
+    const updatedComments = inputs.comment.map((c, i) => {
+      if (i === index) {
+        return { ...c, [name]: value };
+      }
+      return c;
+    });
+
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      comment: updatedComments,
+    }));
+  }
+
+  function handleRemoveComment(index) {
+    const updatedComments = inputs.comment.filter((c, i) => i !== index);
+
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      comment: updatedComments,
+    }));
+  }
+
+  function handleAddComment() {
+    setInputs((prevInputs) => ({
+      ...prevInputs,
+      comment: [...prevInputs.comment, { content: "" }],
+    }));
+  }
+
 
 function handleChange(e){
     console.log(inputs)
@@ -97,33 +128,39 @@ function handleChange(e){
       onChange={handleChange}
       placeholder="Image"
     />
-    <input 
-      type="text"
-      name="comment"
-      value={inputs.comment}
-      onChange={handleChange}
-      placeholder="Comment"
-    />
+    {/* mapping over the comments array */}
+    {/* taking two paramenters (comments, current comment) */}
+    {inputs.comment.map((c, index) => (
+            <div key={index}>
+                {/* rendering an imput field for the comments content */}
+              <input
+                type="text"
+                name="content"
+                value={c.content}
+                onChange={(e) => handleChangeComment(e, index)}
+                placeholder="Comment"
+              />
+              {/*  making button to remove comments */}
+              <button onClick={() => handleRemoveComment(index)}>
+                Remove Comment
+              </button>
+            </div>
+          ))}
+          <button onClick={handleAddComment}>Add Comment</button>
     <button onClick={handleSave}>Save</button>
     <button onClick={handleCancel}>Cancel</button>
   </div>
 ) : 
-            //   <VoteForm 
-            //   title={title}
-            //   description={description}
-            //   img={img}
-            //   comment={comment}
-            //   _id={_id}
-            //   btnText="save"
-            //   submit={editedUserVotes}
-            //   /> 
-            // </div>
           (
             <div>
-              <h1>{title}</h1>
-              <h3>{description}</h3>
+              <h1 className="title">{title}</h1>
+              <h3 className="description">{description}</h3>
               <img src={img} alt={title} />
-              <h3>{comment}</h3>
+              {comment.map((c, index) => (
+            <h3 className="comment" key={index}>
+              {c.content}
+            </h3>
+              ))}
               <div>
                 <p>Vote Count: {voteCount}</p>
                 <p>User Vote: {userVote}</p>

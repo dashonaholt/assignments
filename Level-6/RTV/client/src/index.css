@@ -46,7 +46,7 @@ a {
   background-color: #F1D4E5;
   display: flex;
   flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .auth-container > form > input {
   margin: 16px 8px;
@@ -63,17 +63,20 @@ a {
 
 .public {
   height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: white;
 }
-
 .profile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
+  background-color: rgb(255, 255, 255);
 }
 .profile >h1 {
   margin: 8px;
-  font-size: 2em;
+  font-size: 50px;
   text-align: center;
 }
 .profile > h3 {
@@ -84,10 +87,12 @@ a {
   display: flex;
   flex-direction: column;
   margin: 16px 0;
-  border: 1px solid #3339;
-  background-color: #aaa9;
+  background-color: #F1D4E5;
   padding: 16px;
   border-radius: 5px;
+  border: 1px solid #73BBC9;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+
 }
 .profile > form > input,
 .profile > form > input {
@@ -95,7 +100,33 @@ a {
   padding: 8px;
   border-radius: 5px;
 }
+.profile-yourissues{
+  font-size: 20px;
+  font-weight: 900;
+}
 img {
+  display: block;
+  margin: 0 auto;
   height: 300px;
   width: 300px;
+}
+
+/* vote.jsx  */
+.title{
+font-size: 40px;
+font-weight: 300;
+text-align: center;
+}
+.description {
+  font-size:  20px;
+  font-weight: 300;
+  text-align: center;
+}
+.comment{
+  font-size: 12px;
+  font-weight: 100;
+  width: 300px;
+  border: 1px solid #73BBC9;
+  text-align: center;
+  margin: auto;
 }
