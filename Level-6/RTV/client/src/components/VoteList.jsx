@@ -11,14 +11,18 @@ export default function VoteList(props) {
 
   return (
     <div className="vote-list">
-      {votes.map((vote) => (
+      {votes.map((vote, index) => (
         <Vote
-          key={vote._id}
+          key={`${vote._id}-${index}`}
           title={vote.title}
           description={vote.description}
           _id={vote._id}
           img={vote.img}
           comment={vote.comment}
+          // voteCount={vote.voteCount}
+          upvote={vote.upvote}
+          downvote={vote.downvote}
+          likes={vote.likes}
         />
       ))}
     </div>

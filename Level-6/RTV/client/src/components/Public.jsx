@@ -44,3 +44,4 @@ export default function Public() {
     </div>
   );
 }
+

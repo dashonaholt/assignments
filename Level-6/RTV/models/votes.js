@@ -20,14 +20,20 @@ const votesSchema = new Schema({
     ref: "Votes",
     required: true,
   },
-  upvote: {
-    type: Number,
-    default: 0,
-  },
-  downvote: {
-    type: Number,
-    default: 0,
-  },
+  likes: [
+    {
+      user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true,
+      },
+      username: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
+
   comment: [
     {
       user: {

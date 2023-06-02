@@ -2,6 +2,8 @@ const express = require("express");
 const votesRouter = express.Router();
 const Votes = require("../models/votes.js");
 const { expressjwt: jwt } = require("express-jwt");
+const votes = require("../models/votes.js");
+
 // GET ALL
 votesRouter.route("/").get((req, res, next) => {
   Votes.find()
@@ -87,5 +89,75 @@ votesRouter.put(
   }
 );
 
+
+
+// @route   PUT api/vote/like/:id
+// @des     Like a vote
+// @access  Private
+votesRouter.put(
+  "/like/:id",
+  jwt({ secret: process.env.SECRET, algorithms: ["HS256"] }),
+  async (req, res) => {
+    try {
+      const vote = await Votes.findById(req.params.id);
+      const userId = req.auth._id;
+      const username = req.auth.username;
+      console.log(username);
+
+      if (!vote) {
+        return res.status(404).json({ msg: "Vote not found" });
+      }
+
+      // Check if the vote has already been liked by the user
+      if (vote.likes.some((like) => like.user.toString() === userId)) {
+        return res.status(400).json({ msg: "Vote already liked" });
+      }
+
+      vote.likes.push({ user: userId, username: username });
+      await vote.save();
+
+      res.json(vote.likes);
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send("Server Error");
+    }
+  }
+);
+
+// @route   PUT api/vote/unlike/:id
+// @des     Unlike an vote
+// @access  Private
+votesRouter.put(
+  "/unlike/:id",
+  jwt({ secret: process.env.SECRET, algorithms: ["HS256"] }),
+  async (req, res) => {
+    try {
+      const vote = await Votes.findById(req.params.id);
+      const userId = req.auth._id;
+
+      // Check if the vote has already been liked
+      if (
+        vote.likes.filter((like) => like.user.toString() === userId).length ===
+        0
+      ) {
+        return res.status(400).json({ msg: "Vote has not yet been liked" });
+      }
+
+      // Get remove index
+      const removeIndex = vote.likes
+        .map((like) => like.user.toString())
+        .indexOf(userId);
+
+      vote.likes.splice(removeIndex, 1);
+
+      await vote.save();
+
+      res.json(vote.likes);
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send("Server Error");
+    }
+  }
+);
 // upvote/downvote/comment
 module.exports = votesRouter;

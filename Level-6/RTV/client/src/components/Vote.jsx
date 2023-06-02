@@ -1,11 +1,11 @@
-import React, {useContext, useState} from "react"
+import React, {useContext, useState, useEffect} from "react"
 import { UserContext } from "../../context/UserProvider";
 import VoteForm from "./VoteForm";
 
  //receives props as an argument
 export default function Vote(props){
-    const {title, description, _id, img, comment} = props
-
+    const {title, description, _id, img, comment, token, likes} = props
+console.log(likes)
     const initInputs = {
         title: title,
        description: description,
@@ -14,11 +14,12 @@ export default function Vote(props){
     }
     const [inputs, setInputs] = useState(initInputs)
     //destructuring the title, description, & _id properties from the props object
-    const {deleteUserVotes, editedUserVotes} = useContext(UserContext)
-
+    const {deleteUserVotes, editedUserVotes, likeVote, dislikeVote  } = useContext(UserContext)
+    
 
     //voteCount represents the number of votes
-    const [voteCount, setVoteCount] = useState(0); //0 is the initial value
+    const [voteCount, setVoteCount] = useState(props.upvote - props.downvote);
+    // const [voteCount, setVoteCount] = useState(0);
     //userVote represents the user's vote status.
     const [userVote, setUserVote] = useState(null); //null is the initial value
 
@@ -26,26 +27,6 @@ export default function Vote(props){
 const [isEditing, setIsEditing] = useState(false); // Track editing state
 
 
-    //function that gets triggered when upvote is clicked
-    const handleUpvote = () => {
-        if (userVote === "downvote") {
-          setVoteCount(voteCount + 2);
-        } else if (userVote === null) {
-          setVoteCount(voteCount + 1);
-        }
-        setUserVote("upvote");
-        editedUserVotes(_id, {upvote: voteCount})
-      };
-    //function that gets triggered when downvote is clicked
-      const handleDownvote = () => {
-        if (userVote === "upvote") {
-          setVoteCount(voteCount - 2);
-        } else if (userVote === null) {
-          setVoteCount(voteCount - 1);
-        }
-        setUserVote("downvote");
-        editedUserVotes(_id, {downvote: voteCount})
-      };
       const handleEdit = () => {
           setIsEditing(true);
         };
@@ -100,7 +81,7 @@ function handleChange(e){
         [name]: value
     }))
 }
-
+// const user = user && user.id === userId;
 
     // this component is rendering the items for them to  show up
     return (
@@ -162,13 +143,13 @@ function handleChange(e){
             </h3>
               ))}
               <div>
-                <p>Vote Count: {voteCount}</p>
-                <p>User Vote: {userVote}</p>
-                <button onClick={handleUpvote}disabled={userVote === "upvote"}>
+              {/* <p>Vote Count: {props.voteCount}</p> */}
+                <p>like: {likes.length}</p>
+                <button onClick={() => likeVote(_id)}disabled={userVote === "upvote"}>
                   Upvote
                 </button>
                 <button
-                  onClick={handleDownvote}
+                  onClick={() => dislikeVote(_id)}
                   disabled={userVote === "downvote"}
                 >
                   Downvote

@@ -22,7 +22,7 @@ export default function UserProvider(props){
     }
 
     const [userState, setUserState] = useState(initState)
-
+    
      //useEffect hook is being used to call the getUserVotes
 
 
@@ -121,14 +121,15 @@ function deleteUserVotes(voteId) {
             "Authorization":`Bearer ${initState.token}`
         }
     })
-    .then(res => console.log(res, "res"))
-      .then((res) => {
+    // .then(res => console.log(res, "res"))
+      .then(res => {
           getUserVotes()
-          //console.log("Issue updated successfully!");
+          console.log("Issue updated successfully!");
           setUserState(prevState => ({
               ...prevState,
               //maintaining previous, adding new ones
-              votes: [...prevState.votes]
+              votes: [...prevState.votes, res.data]
+            
             }))
         })
         .catch((error) => {
@@ -137,8 +138,62 @@ function deleteUserVotes(voteId) {
         console.log(updatedVote, "updatedVote")
         console.log(voteId, "voteId")
     }
+    // like vote
+  function likeVote(voteId) {
+    userAxios
+      .put(`/api/votes/like/${voteId}`)
+      .then((res) => {
+        // find the index of the vote to update
+        const voteIndex = userState.votes.findIndex(
+          (votes) => votes._id === voteId
+        );
 
-  
+        // create a new copy of the votes array with the updated votes
+        const updatedVotes = [
+          ...userState.votes.slice(0, voteIndex),
+          {
+            ...userState.votes[voteIndex],
+            likes: res.data,
+          },
+          ...userState.votes.slice(voteIndex + 1),
+        ];
+
+        // update the state of setUserState with the new array of votes
+        setUserState((prevState) => ({
+          ...prevState,
+          votes: updatedVotes,
+        }));
+
+        // fetch updated public votes and update the state
+        getUserVotes();
+      })
+      .catch((err) => console.log(err));
+  }
+
+  // dislike Votes
+  function dislikeVote(voteId) {
+    userAxios
+      .put(`/api/votes/unlike/${voteId}`)
+      .then((res) => {
+        setUserState((prevState) => ({
+          ...prevState,
+          votes: prevState.votes.map((vote) => {
+            if (vote._id === voteId) {
+              return {
+                ...vote,
+                likes: res.data,
+              };
+            }
+            return vote;
+          }),
+        }));
+
+        // fetch updated public votes and update the votes
+        getUserVotes();
+      })
+      .catch((err) => console.log(err));
+  }
+
 
     return (
         <UserContext.Provider
@@ -151,7 +206,9 @@ function deleteUserVotes(voteId) {
             resetAuthErr,
             getUserVotes,
             deleteUserVotes,
-            editedUserVotes
+            editedUserVotes,
+            likeVote,
+            dislikeVote
         }}>
             {props.children}
         </UserContext.Provider>
