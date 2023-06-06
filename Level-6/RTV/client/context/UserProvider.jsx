@@ -62,7 +62,7 @@ export default function UserProvider(props){
         setUserState({
             user:{},
             token: "",
-            todos:[]
+            votes:[]
         })
     }
 
@@ -90,23 +90,44 @@ export default function UserProvider(props){
         })
         .catch(err => console.log(err.response.data.errMsg))
     }
-     /////////created a function to updates the user's state adding a new vote, and handles errors if any occur
-    function addVote(newVote) {
-        const existingVote = userState.votes.find((vote) => vote._id === newVote._id);
-        if (!existingVote) {
-        userAxios.post("/api/votes", newVote) 
+
+    function getAllVotes() {
+        userAxios.get("/api/votes")
         .then(res => {
             setUserState(prevState => ({
-                ...prevState,
-                    //maintaining previous, adding new ones
-                votes: [...prevState.votes, res.data]
+                ...prevState, votes: res.data
             }))
         })
         .catch(err => console.log(err.response.data.errMsg))
-    } else  {
-        console.log("User has already voted on this issue")
-    } 
-}
+    }
+     /////////created a function to updates the user's state adding a new vote, and handles errors if any occur
+// Add user vote
+function addVote(newVote) {
+    userAxios
+      .post('/api/votes', newVote)
+      .then((res) => {
+        setUserState((prevState) => ({
+          ...prevState,
+          votes: [...prevState.votes, res.data],
+        }));
+      })
+      .catch((err) => console.log(err));
+  } 
+// ...
+
+// const addVote = (newVote) => {
+//   userAxios
+//     .post("/api/votes", newVote)
+//     .then((response) => {
+//       // Assuming the response data contains the updated vote object
+//       const updatedVote = response.data;
+//       setUserState((prevVotes) => [...prevVotes, updatedVote]);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };
+
 
 function deleteUserVotes(voteId) {
     userAxios.delete(`/api/votes/${voteId}`)
@@ -114,6 +135,8 @@ function deleteUserVotes(voteId) {
     getUserVotes()
     
   }
+
+
   function editedUserVotes(voteId, updatedVote) {
     userAxios
       .put(`/api/votes/${voteId}`, updatedVote, {
@@ -123,14 +146,14 @@ function deleteUserVotes(voteId) {
     })
     // .then(res => console.log(res, "res"))
       .then(res => {
-          getUserVotes()
           console.log("Issue updated successfully!");
           setUserState(prevState => ({
               ...prevState,
               //maintaining previous, adding new ones
               votes: [...prevState.votes, res.data]
-            
+              
             }))
+            getAllVotes()
         })
         .catch((error) => {
             console.log("Error updating Issue:", error);
@@ -140,6 +163,7 @@ function deleteUserVotes(voteId) {
     }
     // like vote
   function likeVote(voteId) {
+    console.log(voteId)
     userAxios
       .put(`/api/votes/like/${voteId}`)
       .then((res) => {
@@ -208,7 +232,8 @@ function deleteUserVotes(voteId) {
             deleteUserVotes,
             editedUserVotes,
             likeVote,
-            dislikeVote
+            dislikeVote,
+            getAllVotes
         }}>
             {props.children}
         </UserContext.Provider>

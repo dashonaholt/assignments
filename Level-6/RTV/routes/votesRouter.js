@@ -2,7 +2,6 @@ const express = require("express");
 const votesRouter = express.Router();
 const Votes = require("../models/votes.js");
 const { expressjwt: jwt } = require("express-jwt");
-const votes = require("../models/votes.js");
 
 // GET ALL
 votesRouter.route("/").get((req, res, next) => {
@@ -31,14 +30,24 @@ votesRouter.get(
   }
 );
 
-// ADD ONE
+// @route   POST api/votes
+// @des     post vote
+// @access  Private
 votesRouter.post(
   "/",
   jwt({ secret: process.env.SECRET, algorithms: ["HS256"] }),
   (req, res, next) => {
     req.body.user = req.auth._id;
 
-    const newVote = new Votes(req.body);
+    const newVote = new Votes({
+      title: req.body.title,
+      img: req.body.img,
+      description: req.body.description,
+      user: req.body.user,
+      likes: [],
+      comment: [],
+    });
+
     newVote
       .save()
       .then((savedVote) => {
@@ -51,7 +60,9 @@ votesRouter.post(
   }
 );
 
-// DELETE ONE
+// @route   DELETE api/:votesId
+// @des     delete vote
+// @access  Private
 votesRouter.delete(
   "/:votesId",
   jwt({ secret: process.env.SECRET, algorithms: ["HS256"] }),
@@ -69,7 +80,9 @@ votesRouter.delete(
       });
   }
 );
-// Edit(PUT)
+// @route   PUT api/:votesId
+// @des     update vote
+// @access  Private
 votesRouter.put(
   "/:votesId",
   jwt({ secret: process.env.SECRET, algorithms: ["HS256"] }),
@@ -88,8 +101,6 @@ votesRouter.put(
       });
   }
 );
-
-
 
 // @route   PUT api/vote/like/:id
 // @des     Like a vote
@@ -159,5 +170,4 @@ votesRouter.put(
     }
   }
 );
-// upvote/downvote/comment
 module.exports = votesRouter;
