@@ -89,11 +89,11 @@ const votesSchema = new Schema({
 
   comment: [
     {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-        required: true,
-      },
+      // user: {
+      //   type: Schema.Types.ObjectId,
+      //   ref: "User",
+      //   required: true,
+      // },
       content: {
         type: String,
         required: true,

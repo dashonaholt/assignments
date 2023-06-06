@@ -189,7 +189,7 @@ function deleteUserVotes(voteId) {
         }));
 
         // fetch updated public votes and update the state
-        getUserVotes();
+        // getUserVotes();
       })
       .catch((err) => console.log(err));
   }
@@ -213,7 +213,7 @@ function deleteUserVotes(voteId) {
         }));
 
         // fetch updated public votes and update the votes
-        getUserVotes();
+        // getUserVotes();
       })
       .catch((err) => console.log(err));
   }

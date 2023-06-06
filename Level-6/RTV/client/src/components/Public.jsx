@@ -21,7 +21,7 @@ export default function Public() {
 // update sortedVotes when votes change
   useEffect(() => {
     //spreading in the votes, sorting the vote count by
-    const sorted = [...votes].sort((a, b) => b.downvote - a.upvote);
+    const sorted = [...votes].sort((a, b) => b.likes.length - a.likes.length);
     console.log(sorted, "sorted")
    
     setSortedVotes(sorted);
