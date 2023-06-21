@@ -25,7 +25,8 @@ export default function Profile() {
     return (
         <div className="profile">
             <h1>Welcome {username}!</h1>
-            <h3>Add An Issue</h3>
+            <p>Let us know some of the political issues you find important!</p>
+            <h3>Add an issue below:</h3>
             <VoteForm submit={addVote}
             btnText= "add vote"
             />

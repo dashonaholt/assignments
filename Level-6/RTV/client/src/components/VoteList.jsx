@@ -1,5 +1,6 @@
 import React from "react";
 import Vote from "./Vote.jsx";
+
 export default function VoteList(props) {
   const { votes } = props;
   if (!votes) {
